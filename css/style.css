@@ -49,15 +49,15 @@ ul{
 
 :root{
 
-    --primary:#a8521a;
-    --secondary:#f5b97a;
-    --accent:#d96c1a;
+    --primary:#b45309;
+    --secondary:#fbbf24;
+    --accent:#f97316;
 
     --dark:#1B1B1B;
 
     --white:#ffffff;
 
-    --light:#fff2e2;
+    --light:#fff4e5;
 
     --shadow:0 10px 30px rgba(0,0,0,.10);
 
@@ -169,23 +169,16 @@ nav a:hover::after{
 
 .hero{
 
-    height:100vh;
+    min-height:100vh;
 
-    background:
-
-    linear-gradient(rgba(217,108,26,.72),rgba(217,108,26,.72)),
-
-    url("photos/test.jpg");
-
-    background-size:cover;
-
-    background-position:center;
+    background:linear-gradient(135deg,#f59e0b 0%,#ea580c 100%);
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
+    padding:125px 0 55px;
 
 }
 
@@ -197,10 +190,31 @@ nav a:hover::after{
 
 .hero .container{
 
-    text-align:center;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px;
+    color:#2b2118;
 
-    color:white;
+}
 
+.hero-panel{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:38px;
+    border:1px solid rgba(255,255,255,.65);
+    border-radius:24px;
+    background:rgba(255,255,255,.95);
+    box-shadow:0 18px 45px rgba(115,49,0,.18);
+}
+
+.hero-panel .hero-buttons{
+    margin-top:auto;
+    padding-top:24px;
+}
+
+.training-panel{
+    background:rgba(255,250,240,.97);
 }
 
 .badge{
@@ -211,11 +225,10 @@ nav a:hover::after{
 
     border-radius:40px;
 
-    background:rgba(255,255,255,.18);
+    background:#fff1d6;
 
-    border:1px solid rgba(255,255,255,.25);
-
-    backdrop-filter:blur(10px);
+    border:1px solid #fed7aa;
+    color:var(--primary);
 
     margin-bottom:25px;
 
@@ -227,25 +240,33 @@ nav a:hover::after{
 
 .hero h1{
 
-    font-size:58px;
+    font-size:42px;
 
     line-height:1.2;
 
     margin-bottom:25px;
 
     font-weight:700;
+    color:#8a370b;
 
+}
+
+.hero-panel h2{
+    text-align:left;
+    color:#8a370b;
+    font-size:38px;
+    line-height:1.2;
+    margin-bottom:25px;
 }
 
 .hero p{
 
-    width:70%;
+    width:100%;
+    margin:0 auto 32px;
 
-    margin:auto;
+    font-size:17px;
 
-    font-size:19px;
-
-    margin-bottom:40px;
+    color:#51463c;
 
 }
 
@@ -257,7 +278,7 @@ nav a:hover::after{
 
     display:flex;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     gap:20px;
 
@@ -269,7 +290,7 @@ nav a:hover::after{
 
     padding:16px 34px;
 
-    background:var(--accent);
+    background:#1769d2;
 
     color:white;
 
@@ -287,7 +308,7 @@ nav a:hover::after{
 
     transform:translateY(-5px);
 
-    background:#ef6c00;
+    background:#0f4fa8;
 
 }
 
@@ -501,7 +522,7 @@ nav a:hover::after{
 .contact-options-actions .btn:focus,
 .contact-options-actions .btn:active{
 
-    background:var(--accent);
+    background:#1769d2;
 
     color:white;
 
@@ -511,7 +532,7 @@ nav a:hover::after{
 .contact-options-actions .btn.secondary:focus,
 .contact-options-actions .btn.secondary:active{
 
-    background:var(--accent) !important;
+    background:#1769d2 !important;
 
     color:white !important;
 
@@ -570,6 +591,65 @@ section h2{
     font-size:18px;
     color:#555;
     text-align:center;
+}
+
+.experts-section{
+    margin-top:58px;
+}
+
+.experts-section > h3{
+    margin-bottom:26px;
+    color:var(--primary);
+    text-align:center;
+    font-size:30px;
+}
+
+.experts-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.expert-card{
+    padding:30px;
+    border:1px solid #f3dfc7;
+    border-top:4px solid var(--accent);
+    border-radius:var(--radius);
+    background:var(--white);
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.expert-initials{
+    display:grid;
+    place-items:center;
+    width:64px;
+    height:64px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:#fff1d6;
+    color:var(--primary);
+    font-size:21px;
+    font-weight:700;
+}
+
+.expert-card h4{
+    margin-bottom:6px;
+    color:#333;
+    font-size:22px;
+}
+
+.expert-role{
+    margin-bottom:16px;
+    color:var(--primary) !important;
+    font-weight:600;
+}
+
+.expert-card ul{
+    color:#666;
+    line-height:1.9;
 }
 
 /* =====================================================
@@ -650,8 +730,8 @@ section h2{
 
     background:linear-gradient(
         135deg,
-        #f4c38e,
-        #eaa55a
+        #fbbf24,
+        #f97316
     );
 
     color:var(--dark);
@@ -904,8 +984,8 @@ section h2{
 
     background:linear-gradient(
         135deg,
-        #f4c38e,
-        #eaa55a
+        #fbbf24,
+        #f97316
     );
 
     color:var(--dark);
@@ -982,6 +1062,11 @@ footer{
 
     transition:.3s;
 
+}
+
+.footer-grid li a{
+    color:inherit;
+    text-decoration:none;
 }
 
 .footer-grid li:hover{
@@ -1096,10 +1181,23 @@ nav ul{
 
 }
 
+.hero .container{
+    grid-template-columns:1fr;
+    max-width:760px;
+}
+
+.hero-panel{
+    padding:30px;
+}
+
 .hero h1{
 
     font-size:36px;
 
+}
+
+.hero-panel h2{
+    font-size:32px;
 }
 
 .hero p{
@@ -1114,7 +1212,7 @@ nav ul{
 
     flex-direction:column;
 
-    align-items:center;
+    align-items:stretch;
 
 }
 
@@ -1140,6 +1238,10 @@ section h2{
 
     text-align:center;
 
+}
+
+.experts-grid{
+    grid-template-columns:1fr;
 }
 
 }
@@ -1201,6 +1303,23 @@ section h2{
 .form-status.success{
 
     color:#17713a;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:1100;
+    width:min(90vw,440px);
+    min-height:0;
+    margin:0;
+    padding:24px 28px;
+    transform:translate(-50%,-50%);
+    border:1px solid #a7d7b5;
+    border-radius:16px;
+    background:#f0fff4;
+    box-shadow:0 20px 60px rgba(0,0,0,.28);
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
 
 }
 
