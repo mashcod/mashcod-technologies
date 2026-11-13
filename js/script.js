@@ -1,3 +1,17 @@
+const siteHeader = document.querySelector('header');
+const updateHeaderHeight = () => {
+    if (siteHeader) {
+        document.documentElement.style.setProperty('--header-height', `${siteHeader.getBoundingClientRect().height}px`);
+    }
+};
+
+updateHeaderHeight();
+if (siteHeader && 'ResizeObserver' in window) {
+    new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+} else {
+    window.addEventListener('resize', updateHeaderHeight);
+}
+
 const openConsultationBtn = document.getElementById('openConsultationBtn');
 const registerTrainingBtn = document.getElementById('registerTrainingBtn');
 const closeConsultationModal = document.getElementById('closeConsultationModal');
@@ -7,7 +21,7 @@ const consultationForm = document.getElementById('consultationForm');
 const consultationStatus = document.getElementById('consultationStatus');
 const submitConsultationBtn = document.getElementById('submitConsultationBtn');
 
-const openContactOptionsBtn = document.getElementById('openContactOptionsBtn');
+const openContactOptionsBtns = document.querySelectorAll('.openContactOptionsBtn');
 const closeContactOptionsModal = document.getElementById('closeContactOptionsModal');
 const contactOptionsModal = document.getElementById('contactOptionsModal');
 
@@ -41,7 +55,10 @@ openConsultationBtn.addEventListener('click', () => openModal('consultation'));
 registerTrainingBtn.addEventListener('click', () => openModal('training'));
 closeConsultationModal.addEventListener('click', closeModal);
 cancelConsultationBtn.addEventListener('click', closeModal);
-openContactOptionsBtn.addEventListener('click', openContactOptions);
+openContactOptionsBtns.forEach((button) => button.addEventListener('click', (event) => {
+    event.preventDefault();
+    openContactOptions();
+}));
 closeContactOptionsModal.addEventListener('click', closeContactOptions);
 consultModal.addEventListener('click', (event) => {
     if (event.target === consultModal) {
