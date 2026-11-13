@@ -70,10 +70,10 @@ ul{
 ===================================================== */
 
 .pricing-announcement{
-    margin-top:80px;
+    margin-top:var(--header-height,80px);
     padding:10px 20px;
     position:sticky;
-    top:80px;
+    top:var(--header-height,80px);
     z-index:998;
     background:var(--primary);
     color:var(--white);

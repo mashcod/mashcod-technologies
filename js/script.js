@@ -1,3 +1,17 @@
+const siteHeader = document.querySelector('header');
+const updateHeaderHeight = () => {
+    if (siteHeader) {
+        document.documentElement.style.setProperty('--header-height', `${siteHeader.getBoundingClientRect().height}px`);
+    }
+};
+
+updateHeaderHeight();
+if (siteHeader && 'ResizeObserver' in window) {
+    new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+} else {
+    window.addEventListener('resize', updateHeaderHeight);
+}
+
 const openConsultationBtn = document.getElementById('openConsultationBtn');
 const registerTrainingBtn = document.getElementById('registerTrainingBtn');
 const closeConsultationModal = document.getElementById('closeConsultationModal');
