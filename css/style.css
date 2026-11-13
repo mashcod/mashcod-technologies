@@ -90,6 +90,10 @@ ul{
     min-width:0;
 }
 
+body.lang-hi .pricing-announcement-copy [lang="hi"]{
+    display:none;
+}
+
 .pricing-offer{
     overflow:hidden;
     color:#39ff14;
@@ -165,6 +169,32 @@ header{
 
     height:80px;
 
+}
+
+.language-toggle{
+    flex:0 0 auto;
+    border:1px solid var(--primary);
+    border-radius:999px;
+    padding:8px 14px;
+    background:var(--white);
+    color:var(--primary);
+    font:inherit;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible{
+    background:var(--primary);
+    color:var(--white);
+}
+
+@media(max-width:768px){
+    .language-toggle{margin-top:12px}
+}
+
+@media(max-width:480px){
+    .language-toggle{width:auto}
 }
 
 .logo{
