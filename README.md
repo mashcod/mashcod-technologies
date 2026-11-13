@@ -26,3 +26,14 @@ Open `index.html` in a browser, or serve the project folder with any static web 
 The request form is configured in `js/script.js` with an EmailJS public key, service ID, and template ID. The EmailJS account login email is `magadh.hind@gmail.com`. The form sends a request type in the template parameters so consultation requests and training registrations can be distinguished. Check the EmailJS template's subject and body settings to ensure they use the `title`, `request_type`, and `message` variables.
 
 Do not store the EmailJS account password in this README or in website source files. Keep account credentials in a password manager and use EmailJS's dashboard to manage the service and template.
+
+## Change Remote
+git remote remove origin
+
+git remote add origin https://github.com/mashcod/mashcod-technologies.git
+
+git config --local credential.https://github.com.useHttpPath true
+
+git config --local credential.gitHubAuthModes browser
+
+git push --all -u origin
